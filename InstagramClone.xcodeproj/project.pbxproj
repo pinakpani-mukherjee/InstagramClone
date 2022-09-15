@@ -28,6 +28,9 @@
 		C003B36C28D3113A009CEABF /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C003B36B28D3113A009CEABF /* AnalyticsManager.swift */; };
 		C003B36E28D31148009CEABF /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C003B36D28D31148009CEABF /* HapticsManager.swift */; };
 		C003B37028D313C1009CEABF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C003B36F28D313C1009CEABF /* GoogleService-Info.plist */; };
+		C003B37228D33BC0009CEABF /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C003B37128D33BBF009CEABF /* SignInHeaderView.swift */; };
+		C003B37428D33D4D009CEABF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C003B37328D33D4D009CEABF /* Extensions.swift */; };
+		C003B37628D344C8009CEABF /* IGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C003B37528D344C8009CEABF /* IGTextField.swift */; };
 		C086B24B28D3069E00D6AC5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086B24A28D3069E00D6AC5A /* AppDelegate.swift */; };
 		C086B24D28D3069E00D6AC5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086B24C28D3069E00D6AC5A /* SceneDelegate.swift */; };
 		C086B24F28D3069E00D6AC5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086B24E28D3069E00D6AC5A /* HomeViewController.swift */; };
@@ -62,6 +65,9 @@
 		C003B36B28D3113A009CEABF /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		C003B36D28D31148009CEABF /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		C003B36F28D313C1009CEABF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C003B37128D33BBF009CEABF /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
+		C003B37328D33D4D009CEABF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C003B37528D344C8009CEABF /* IGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextField.swift; sourceTree = "<group>"; };
 		C086B24728D3069E00D6AC5A /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C086B24A28D3069E00D6AC5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C086B24C28D3069E00D6AC5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				C086B25828D306A100D6AC5A /* LaunchScreen.storyboard */,
+				C003B37128D33BBF009CEABF /* SignInHeaderView.swift */,
+				C003B37528D344C8009CEABF /* IGTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 				C086B25628D306A100D6AC5A /* Assets.xcassets */,
 				C086B24A28D3069E00D6AC5A /* AppDelegate.swift */,
 				C086B24C28D3069E00D6AC5A /* SceneDelegate.swift */,
+				C003B37328D33D4D009CEABF /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -353,10 +362,13 @@
 				C003B35628D31043009CEABF /* CaptionViewController.swift in Sources */,
 				C003B34B28D30F31009CEABF /* NotificationsViewController.swift in Sources */,
 				C003B34D28D30F40009CEABF /* ProfileViewController.swift in Sources */,
+				C003B37628D344C8009CEABF /* IGTextField.swift in Sources */,
 				C003B35228D3101D009CEABF /* SignInViewController.swift in Sources */,
+				C003B37428D33D4D009CEABF /* Extensions.swift in Sources */,
 				C003B35828D3105A009CEABF /* ListViewController.swift in Sources */,
 				C003B34928D30F20009CEABF /* CameraViewController.swift in Sources */,
 				C003B36828D31123009CEABF /* DatabaseManager.swift in Sources */,
+				C003B37228D33BC0009CEABF /* SignInHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
