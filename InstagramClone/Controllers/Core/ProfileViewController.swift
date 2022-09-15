@@ -11,8 +11,6 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Profile"
-        view.backgroundColor = .systemBackground
 
         // Do any additional setup after loading the view.
     }
