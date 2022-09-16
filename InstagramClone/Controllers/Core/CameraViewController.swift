@@ -11,7 +11,8 @@ class CameraViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Camera"
+        view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
     }
     

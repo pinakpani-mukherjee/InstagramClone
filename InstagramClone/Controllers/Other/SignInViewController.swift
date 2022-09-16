@@ -70,9 +70,9 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-<<<<<<< HEAD
+
         // Do any additional setup after loading the view.
-=======
+
         title = "Sign In"
         view.backgroundColor = .secondarySystemBackground
         addSubViews()
@@ -166,7 +166,6 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
             didTapSignIn()
         }
         return true
->>>>>>> 93650ff (added Sign in facilities)
     }
     
 
