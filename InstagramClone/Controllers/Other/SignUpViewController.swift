@@ -52,17 +52,6 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,UIImagePickerCo
         return field
     }()
     
-    private let passwordCheckField:IGTextField = {
-        let field = IGTextField()
-        field.placeholder = "Retype Password"
-        field.isSecureTextEntry = true
-        field.keyboardType = .default
-        field.returnKeyType = .continue
-        field.autocorrectionType = .no
-
-        return field
-    }()
-    
     private let signUpButton:UIButton = {
         let button = UIButton()
         button.setTitle("Sign Up", for: .normal)
@@ -86,6 +75,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,UIImagePickerCo
         return button
     }()
     
+    public var completion: (() -> Void)?
     
     
     // MARK: - Lifecycle
@@ -114,11 +104,10 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,UIImagePickerCo
                                   y: view.safeAreaInsets.top + 15,
                                   width: imageSize,
                                   height: imageSize)
-        emailField.frame = CGRect(x: 25, y: profilePictureImageView.bottom + 20, width: view.width - 50, height: 50)
-        emailField.frame = CGRect(x: 25, y: emailField.bottom + 20, width: view.width - 50, height: 50)
+        usernameField.frame = CGRect(x: 25, y: profilePictureImageView.bottom + 50, width: view.width - 50, height: 50)
+        emailField.frame = CGRect(x: 25, y: usernameField.bottom + 10, width: view.width - 50, height: 50)
         passwordField.frame = CGRect(x: 25, y: emailField.bottom + 10, width: view.width - 50, height: 50)
-        passwordCheckField.frame = CGRect(x: 25, y: passwordField.bottom + 10, width: view.width - 50, height: 50)
-        signUpButton.frame = CGRect(x: 35, y: passwordCheckField.bottom + 20, width: view.width - 70, height: 50)
+        signUpButton.frame = CGRect(x: 35, y: passwordField.bottom + 20, width: view.width - 70, height: 50)
 
         termsButton.frame = CGRect(x: 35, y: signUpButton.bottom + 70, width: view.width - 70, height: 40)
         privacyButton.frame = CGRect(x: 35, y: termsButton.bottom + 10, width: view.width - 70, height: 40)
@@ -126,9 +115,9 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,UIImagePickerCo
     
     private func addSubViews(){
         view.addSubview(profilePictureImageView)
+        view.addSubview(usernameField)
         view.addSubview(emailField)
         view.addSubview(passwordField)
-        view.addSubview(passwordCheckField)
         view.addSubview(signUpButton)
         view.addSubview(termsButton)
         view.addSubview(privacyButton)
@@ -183,21 +172,35 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,UIImagePickerCo
         passwordField.resignFirstResponder()
         guard let email = emailField.text,
               let password = passwordField.text,
-              let passwordCheck = passwordCheckField.text,
               let username = usernameField.text,
               !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
               !username.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
-              !username.trimmingCharacters(in: .alphanumerics).isEmpty,
+              username.trimmingCharacters(in: .alphanumerics).isEmpty,
               !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
-              !passwordCheck.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
               password.count > 6,
-              password == passwordCheck else{
+              username.count > 6 else{
                   presentGeneralError(title: "Whoops", message: "Please fill the fields properly.")
                   return
                 }
+        let data = profilePictureImageView.image?.pngData()
         
         //Sign in with auth Manager
-        signIn()
+        AuthManager.shared.signUp(email: email,
+                                  username: username,
+                                  password: password,
+                                  profilePicture: data) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let user):
+                    UserDefaults.standard.setValue(user.email, forKey:"email")
+                    UserDefaults.standard.setValue(user.username, forKey:"username")
+                    self?.navigationController?.popToRootViewController(animated: true)
+                    self?.completion?()
+                case .failure(let error):
+                    print("\n\nSignup Error:\(error) \n\n")
+                }
+            }
+        }
     }
     private func presentGeneralError(title:String,message:String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -219,10 +222,6 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,UIImagePickerCo
         }
         let vc = SFSafariViewController(url: url)
         present(vc, animated: true)
-    }
-    
-    private func signIn(){
-        
     }
     
     
