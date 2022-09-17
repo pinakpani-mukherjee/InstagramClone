@@ -35,6 +35,18 @@ extension UIView{
     }
 }
 
+extension Decodable{
+    init?(with dictonary: [String:Any]) {
+        guard let data = try? JSONSerialization.data(withJSONObject: dictonary, options: .prettyPrinted) else {
+            return nil
+        }
+        guard let result = try? JSONDecoder().decode(Self.self, from: data) else {
+            return nil
+        }        
+        self = result
+    }
+}
+
 extension Encodable {
     func asDictonary() -> [String:Any]? {
         guard let data = try? JSONEncoder().encode(self) else {

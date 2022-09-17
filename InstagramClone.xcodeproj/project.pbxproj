@@ -31,6 +31,7 @@
 		C003B37428D33D4D009CEABF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C003B37328D33D4D009CEABF /* Extensions.swift */; };
 		C003B37628D344C8009CEABF /* IGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C003B37528D344C8009CEABF /* IGTextField.swift */; };
 		C003B37828D4344A009CEABF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C003B37728D4344A009CEABF /* GoogleService-Info.plist */; };
+		C003B3A328D590E1009CEABF /* LaunchScreenFinal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C003B3A228D590E0009CEABF /* LaunchScreenFinal.storyboard */; };
 		C086B24B28D3069E00D6AC5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086B24A28D3069E00D6AC5A /* AppDelegate.swift */; };
 		C086B24D28D3069E00D6AC5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086B24C28D3069E00D6AC5A /* SceneDelegate.swift */; };
 		C086B24F28D3069E00D6AC5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086B24E28D3069E00D6AC5A /* HomeViewController.swift */; };
@@ -68,6 +69,7 @@
 		C003B37328D33D4D009CEABF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C003B37528D344C8009CEABF /* IGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextField.swift; sourceTree = "<group>"; };
 		C003B37728D4344A009CEABF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C003B3A228D590E0009CEABF /* LaunchScreenFinal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenFinal.storyboard; sourceTree = "<group>"; };
 		C086B24728D3069E00D6AC5A /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C086B24A28D3069E00D6AC5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C086B24C28D3069E00D6AC5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				C086B25828D306A100D6AC5A /* LaunchScreen.storyboard */,
 				C003B37128D33BBF009CEABF /* SignInHeaderView.swift */,
 				C003B37528D344C8009CEABF /* IGTextField.swift */,
+				C003B3A228D590E0009CEABF /* LaunchScreenFinal.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C003B3A328D590E1009CEABF /* LaunchScreenFinal.storyboard in Resources */,
 				C086B25A28D306A100D6AC5A /* LaunchScreen.storyboard in Resources */,
 				C086B25728D306A100D6AC5A /* Assets.xcassets in Resources */,
 				C003B37828D4344A009CEABF /* GoogleService-Info.plist in Resources */,
@@ -508,6 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJT65P28V5;
@@ -541,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJT65P28V5;
