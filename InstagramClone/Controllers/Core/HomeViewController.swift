@@ -62,21 +62,66 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         switch cellType {
             
         case .poster(let viewModel):
-            break
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: PosterCollectionViewCell.identifier,
+                for: indexPath
+            ) as? PosterCollectionViewCell else {
+                fatalError()
+            }
+            cell.configure(with: viewModel)
+            return cell
+
         case .post(let viewModel):
-            break
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: PostCollectionViewCell.identifier,
+                for: indexPath
+            ) as? PostCollectionViewCell else {
+                fatalError()
+            }
+            cell.configure(with: viewModel)
+            cell.contentView.backgroundColor = .secondarySystemBackground
+            return cell
         case .actions(let viewModel):
-            break
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: PostActionsCollectionViewCell.identifier,
+                for: indexPath
+            ) as? PostActionsCollectionViewCell else {
+                fatalError()
+            }
+            cell.configure(with: viewModel)
+            cell.contentView.backgroundColor = colors[indexPath.row]
+            return cell
         case .likeCount(let viewModel):
-            break
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: PostLikesCollectionViewCell.identifier,
+                for: indexPath
+            ) as? PostLikesCollectionViewCell else {
+                fatalError()
+            }
+            cell.configure(with: viewModel)
+            cell.contentView.backgroundColor = colors[indexPath.row]
+            return cell
         case .caption(let viewModel):
-            break
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: PostCaptionCollectionViewCell.identifier,
+                for: indexPath
+            ) as? PostCaptionCollectionViewCell else {
+                fatalError()
+            }
+            cell.configure(with: viewModel)
+            cell.contentView.backgroundColor = colors[indexPath.row]
+            return cell
         case .timestamp(let viewModel):
-            break
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: PostDatetimeCollectionViewCell.identifier,
+                for: indexPath
+            ) as? PostDatetimeCollectionViewCell else {
+                fatalError()
+            }
+            cell.configure(with: viewModel)
+            cell.contentView.backgroundColor = colors[indexPath.row]
+            return cell
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.contentView.backgroundColor = colors[indexPath.row]
-        return cell
     }
     
      
@@ -148,8 +193,18 @@ extension HomeViewController{
         collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self,
-                                forCellWithReuseIdentifier: "cell")
+        collectionView.register(PosterCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PosterCollectionViewCell.identifier)
+        collectionView.register(PostCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PostCollectionViewCell.identifier)
+        collectionView.register(PostActionsCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PostActionsCollectionViewCell.identifier)
+        collectionView.register(PostLikesCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PostLikesCollectionViewCell.identifier)
+        collectionView.register(PostCaptionCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PostCaptionCollectionViewCell.identifier)
+        collectionView.register(PostDatetimeCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PostDatetimeCollectionViewCell.identifier)
         self.collectionView = collectionView
     }
 }
