@@ -8,8 +8,15 @@
 import UIKit
 import SDWebImage
 
+protocol PosterCollectionViewCellDelegate: AnyObject {
+    func posterCollectionViewCellDidTapMore(_ cell:PosterCollectionViewCell)
+    func posterCollectionViewCellDidTapUsername(_ cell:PosterCollectionViewCell)
+}
+
 final class PosterCollectionViewCell: UICollectionViewCell {
     static let identifier = "PosterCollectionViewCell"
+    
+    weak var delegate: PosterCollectionViewCellDelegate?
     
     private let imageView:  UIImageView = {
         let imageView = UIImageView()
@@ -40,6 +47,10 @@ final class PosterCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(usernameLabel)
         contentView.addSubview(moreButton)
         moreButton.addTarget(self, action: #selector(didTapMore), for: .touchUpInside)
+        usernameLabel.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(didTapUsername))
+        usernameLabel.addGestureRecognizer(tap)
     }
     
     required init?(coder: NSCoder) {
@@ -84,6 +95,9 @@ final class PosterCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func didTapMore(){
-        
+        delegate?.posterCollectionViewCellDidTapMore(self)
+    }
+    @objc func didTapUsername(){
+        delegate?.posterCollectionViewCellDidTapUsername(self)
     }
 }
