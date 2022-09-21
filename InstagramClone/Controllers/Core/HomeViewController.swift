@@ -39,7 +39,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 likers: ["kappaman"])),
             .caption(viewModel: PostCaptionCollectionViewCellViewModel(
                 username: "flowerman",
-                caption: "Some Flowers")),
+                caption: "Some Flowers and shit")),
             .timestamp(viewModel: PostDatetimeCollectionViewCellViewModel(
                 date: Date()))
         ]
@@ -56,7 +56,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModels[section].count
     }
-    let colors:[UIColor] =  [.red,.green,.blue,.systemPink,.orange,.yellow]
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellType = viewModels[indexPath.section][indexPath.row]
         switch cellType {
@@ -89,7 +89,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         case .likeCount(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -99,7 +98,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         case .caption(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -109,7 +107,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         case .timestamp(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -119,7 +116,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         }
     }
