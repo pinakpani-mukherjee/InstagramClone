@@ -580,6 +580,7 @@
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Instagram;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take profile picture.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow access to the microphone to take videos.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to use photo for profile picture.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -614,6 +615,7 @@
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Instagram;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take profile picture.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow access to the microphone to take videos.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to use photo for profile picture.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
