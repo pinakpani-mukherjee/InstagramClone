@@ -51,6 +51,7 @@
 		C086B25528D3069E00D6AC5A /* InstagramClone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C086B25328D3069E00D6AC5A /* InstagramClone.xcdatamodeld */; };
 		C086B25728D306A100D6AC5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C086B25628D306A100D6AC5A /* Assets.xcassets */; };
 		C086B25A28D306A100D6AC5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C086B25828D306A100D6AC5A /* LaunchScreen.storyboard */; };
+		C0C44F5128E1EA9A00AE32FD /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C44F5028E1EA9A00AE32FD /* PostEditViewController.swift */; };
 		F6D489FACA34DD663035DCB9 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01AD0DDFDAE96234D3BEC5A /* Pods_InstagramClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		C086B25628D306A100D6AC5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C086B25928D306A100D6AC5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C086B25B28D306A100D6AC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0C44F5028E1EA9A00AE32FD /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				C003B35728D3105A009CEABF /* ListViewController.swift */,
 				C003B35928D3106E009CEABF /* PostViewController.swift */,
 				C003B35B28D31083009CEABF /* SettingsViewController.swift */,
+				C0C44F5028E1EA9A00AE32FD /* PostEditViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				C003B36A28D3112F009CEABF /* StorageManager.swift in Sources */,
 				C003B36428D310ED009CEABF /* Notification.swift in Sources */,
 				C003B35628D31043009CEABF /* CaptionViewController.swift in Sources */,
+				C0C44F5128E1EA9A00AE32FD /* PostEditViewController.swift in Sources */,
 				C003B34B28D30F31009CEABF /* NotificationsViewController.swift in Sources */,
 				C003B34D28D30F40009CEABF /* ProfileViewController.swift in Sources */,
 				C003B37628D344C8009CEABF /* IGTextField.swift in Sources */,
