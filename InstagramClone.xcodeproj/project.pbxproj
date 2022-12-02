@@ -52,6 +52,7 @@
 		C086B25728D306A100D6AC5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C086B25628D306A100D6AC5A /* Assets.xcassets */; };
 		C086B25A28D306A100D6AC5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C086B25828D306A100D6AC5A /* LaunchScreen.storyboard */; };
 		C0C44F5128E1EA9A00AE32FD /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C44F5028E1EA9A00AE32FD /* PostEditViewController.swift */; };
+		C0D917FF2939CA43006F0EC2 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D917FE2939CA43006F0EC2 /* PhotoCollectionViewCell.swift */; };
 		F6D489FACA34DD663035DCB9 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01AD0DDFDAE96234D3BEC5A /* Pods_InstagramClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		C086B25928D306A100D6AC5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C086B25B28D306A100D6AC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0C44F5028E1EA9A00AE32FD /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
+		C0D917FE2939CA43006F0EC2 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				C003B37128D33BBF009CEABF /* SignInHeaderView.swift */,
 				C003B37528D344C8009CEABF /* IGTextField.swift */,
 				C003B3A228D590E0009CEABF /* LaunchScreenFinal.storyboard */,
+				C0D917FE2939CA43006F0EC2 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				C003B3B728D76FB3009CEABF /* PostCollectionViewCell.swift in Sources */,
 				C003B36E28D31148009CEABF /* HapticsManager.swift in Sources */,
 				C003B3B028D766B7009CEABF /* PostDatetimeCollectionViewCellViewModel.swift in Sources */,
+				C0D917FF2939CA43006F0EC2 /* PhotoCollectionViewCell.swift in Sources */,
 				C003B3A928D76592009CEABF /* PostActionsCollectionsViewCellViewModel.swift in Sources */,
 				C003B36028D310C6009CEABF /* Post.swift in Sources */,
 				C003B35E28D310B8009CEABF /* User.swift in Sources */,
