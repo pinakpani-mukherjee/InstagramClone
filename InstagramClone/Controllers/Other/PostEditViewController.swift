@@ -4,7 +4,7 @@
 //
 //  Created by Pinakpani Mukherjee on 2022/09/26.
 //
-
+import CoreImage
 import UIKit
 
 class PostEditViewController: UIViewController {
@@ -35,6 +35,10 @@ class PostEditViewController: UIViewController {
         imageView.image = image
         view.addSubview(imageView)
         
+        DispatchQueue.main.asyncAfter(deadline: .now()+4){
+            self.filterImage(image: self.image)
+        }
+        
 
         // Do any additional setup after loading the view.
     }
@@ -47,5 +51,21 @@ class PostEditViewController: UIViewController {
                                  height: view.width)
     }
 
-
+    private func filterImage(image:UIImage){
+        guard let cgImage = image.cgImage else {return}
+        let filter = CIFilter(name: "CIColorMonochrome")
+        filter?.setValue(CIImage(cgImage: cgImage), forKey: "inputImage")
+        filter?.setValue(CIColor(red: 0.7, green: 0.7, blue: 0.7), forKey: "inputColor")
+        filter?.setValue(1.0, forKey: "inputIntensity")
+        guard let outputImage = filter?.outputImage else {return}
+        
+        let context = CIContext()
+        
+        if let outputcgImage = context.createCGImage(outputImage, from: outputImage.extent){
+            let filteredImage = UIImage(cgImage: outputcgImage)
+            
+            imageView.image = filteredImage
+        }
+        
+    }
 }
